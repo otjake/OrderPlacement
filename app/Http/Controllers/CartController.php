@@ -36,7 +36,7 @@ class CartController extends Controller
         $items_quantity_count=count( $items_quantity);
 
 
-        //making sure product entered and their quantity match
+        //making sure product entered and their no of quantity entered match
         if($items_count !== $items_quantity_count ){
             return response()->json(['error'=>"product inputs do not match quantity inputs,make sure inputs are comma separated"],401);
 
@@ -59,6 +59,7 @@ class CartController extends Controller
 
         $quantity_array=array();
 
+        //validating
         foreach ($items_quantity as $item_q){
             if(intval($item_q)) {
                 array_push($quantity_array, $item_q);
