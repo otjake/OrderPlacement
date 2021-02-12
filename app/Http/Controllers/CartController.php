@@ -59,7 +59,7 @@ class CartController extends Controller
 
         $quantity_array=array();
 
-        //validating
+        //validating integer entered
         foreach ($items_quantity as $item_q){
             if(intval($item_q)) {
                 array_push($quantity_array, $item_q);
