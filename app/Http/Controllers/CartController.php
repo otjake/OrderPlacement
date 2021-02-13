@@ -82,7 +82,7 @@ class CartController extends Controller
 
         $result=$cart->save();
        if($result){
-           return response()->json(array("id"=> $cart->id,"Order_Total_price"=>$cart->total_order_price,'success'=>'Order made Successfully.'),200);
+           return response()->json(array("id"=> $cart->id,"customer_email"=> $cart->customer_email,"Order_Total_price"=>$cart->total_order_price,'success'=>'Order made Successfully.'),200);
        }else{
            return ["An error occurred"];
        }
